@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Estimation Result{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Prediction Result</h1>
+                <p class="lead text-muted">Check out the estimated melting point for your compound.</p>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Estimated Melting Point</h5>
+                    <p class="card-text">SMILES: {{ smiles }}</p>
+                    <p class="card-text">The estimated melting point is: <strong>{{ melting_point }} °C</strong> ({{ k_melting_point }} K)</p>
+                    <div class="d-grid">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">New Estimation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

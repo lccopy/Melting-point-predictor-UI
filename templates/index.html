@@ -1,0 +1,106 @@
+{% extends "base.html" %} {% block title %}Melting Point Estimation{% endblock %} {% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Melting Point Estimation App</h1>
+                <p class="lead text-muted">Enter your SMILES structure and get the estimated melting point with accuracy.</p>
+            </div>
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="smiles" class="form-label">SMILES Structure:</label>
+                            <input type="text" class="form-control" id="smiles" name="smiles" placeholder="C1CCCCC1" required />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Estimate</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="accordion accordion-flush mt-4" id="infoAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="smilesHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#smilesCollapse" aria-expanded="false" aria-controls="smilesCollapse">
+                            What is SMILES?
+                        </button>
+                    </h2>
+                    <div id="smilesCollapse" class="accordion-collapse collapse" aria-labelledby="smilesHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            SMILES (Simplified Molecular Input Line Entry System) is a notation that allows a user to represent a chemical structure in a way that can be used by the computer. It is a text string that encodes a molecular
+                            structure.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="importanceHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#importanceCollapse" aria-expanded="false" aria-controls="importanceCollapse">
+                            Why is Melting Point Important?
+                        </button>
+                    </h2>
+                    <div id="importanceCollapse" class="accordion-collapse collapse" aria-labelledby="importanceHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            The melting point of a substance is crucial for identification and characterization of a compound. It is an essential physical property used in many fields of science and industry.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="methodologyHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#methodologyCollapse" aria-expanded="false" aria-controls="methodologyCollapse">
+                            What Methodology is Used for Estimation?
+                        </button>
+                    </h2>
+                    <div id="methodologyCollapse" class="accordion-collapse collapse" aria-labelledby="methodologyHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            Our estimation tool uses a combination of machine learning algorithms trained on a large dataset of known chemical compounds and their melting points. The tool considers various molecular descriptors and
+                            properties to predict melting points.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="dataHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dataCollapse" aria-expanded="false" aria-controls="dataCollapse">
+                            Where Does the Data Come From?
+                        </button>
+                    </h2>
+                    <div id="dataCollapse" class="accordion-collapse collapse" aria-labelledby="dataHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            The data used for training our prediction models is sourced from reputable chemical databases and scientific literature. It encompasses a wide range of organic and inorganic compounds.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="feedbackHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#feedbackCollapse" aria-expanded="false" aria-controls="feedbackCollapse">
+                            How Can I Provide Feedback?
+                        </button>
+                    </h2>
+                    <div id="feedbackCollapse" class="accordion-collapse collapse" aria-labelledby="feedbackHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">We value your feedback to improve our tool. Please contact us by emailing <a href="mailto:guillaumebretel@gmail.com">guillaumebretel@gmail.com</a> with any comments or suggestions.</div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="disclaimerHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#disclaimerCollapse" aria-expanded="false" aria-controls="disclaimerCollapse">
+                            Disclaimer
+                        </button>
+                    </h2>
+                    <div id="disclaimerCollapse" class="accordion-collapse collapse" aria-labelledby="disclaimerHeading" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            The estimated melting point provided by this tool is based on predictive modeling and is intended for educational and research purposes only.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
