@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>{% block title %}MP Estimation{% endblock %}</title>
+    <style>
+        :root {
+            --bs-primary: #ffffff;
+            --bs-dark: #343a40;
+            --bs-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar-custom, footer {
+            background: var(--bs-dark);
+        }
+
+        footer {
+            border-top: 3px solid var(--bs-primary);
+        }
+
+
+        .footer-link, .footer-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='logo.png') }}"  style="width:40px; height:auto;" alt="Logo">Melting Point Estimator</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- place for other navigation items if needed -->
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 flex-grow-1">
+        {% block content %}
+        <!-- block content here -->
+        {% endblock %}
+    </main>
+
+    <footer class="text-white py-3 mt-auto">
+        <p class="text-center mb-0">
+            <a href="https://github.com/Guillaume2126" target="_blank" class="footer-link">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 20px; vertical-align: middle; margin-right: 5px; border-radius: 50%;">Guillaume2126
+            </a>  |
+            <a href="https://github.com/lccopy" target="_blank" class="footer-link">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="width: 20px; vertical-align: middle; margin-right: 5px; border-radius: 50%;">lccopy
+            </a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
