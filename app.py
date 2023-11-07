@@ -20,5 +20,18 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/method')
+def method():
+    return render_template("method.html")
+
+@app.route('/contacts')
+def contacts():
+    return render_template("contacts.html")
+
+
+@app.route('/contribute')
+def contribute():
+    return render_template("contribute.html")
+
 if __name__ == '__main__':
     app.run(debug=False)
