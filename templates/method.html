@@ -1,0 +1,93 @@
+{% extends "base.html" %} {% block title %}Molecular Melting Points Estimation Study{% endblock %} {% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="text-center mb-5">
+                <h1 class="fw-bold">Comprehensive Machine Learning Approach for Predicting Molecular Melting Points</h1>
+                <p class="lead text-muted">An exploration of utilizing structural data for melting point prediction.</p>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">Our project</h2>
+                    <p>
+                        Predicting molecular melting points is crucial for the characterization and application of chemical compounds. This study presents a machine learning approach utilizing a LightGBM regression model to predict melting
+                        points from structural molecular data. We performed an exhaustive data preprocessing, feature selection, and hyperparameter optimization to improve model performance. Our findings demonstrate the model's
+                        effectiveness in predicting melting points with an acceptable error margin, indicating the potential of machine learning in supplementing experimental thermodynamics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">1. Introduction</h2>
+                    <p>
+                        The melting point of a molecule is a fundamental physical property with implications for its chemical stability and application. Traditional experimental methods for determining melting points are often
+                        time-consuming and costly. Machine learning models offer a fast, cost-effective alternative for predicting physical properties from molecular structures. This study aims to employ the LightGBM model, renowned for its
+                        efficiency with large datasets and high-dimensional features, to estimate melting points of molecules from their chemical properties.
+                    </p>
+                </div>
+            </div>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">2. Methodology</h2>
+
+                    <h3 class="h6 fw-bold">2.1 Data Collection and Preprocessing:</h3>
+                    <p>
+                        A dataset of molecular structures and associated melting points was gathered. Each entry consisted of molecular descriptors, including but not limited to, weight, volume, and various calculated properties. Data
+                        preprocessing included shuffling, removing non-informative features, and assessing multicollinearity.
+                    </p>
+
+                    <h3 class="h6 fw-bold">2.2 Exploratory Data Analysis (EDA):</h3>
+                    <p>We utilized Pearson correlation coefficients to visualize relationships between features, excluding those with coefficients greater than 0.90 to prevent multicollinearity from skewing the model's results.</p>
+
+                    <h3 class="h6 fw-bold">2.3 Feature Scaling:</h3>
+                    <p>
+                        Numerical features were scaled using an ensemble of scalers to normalize data and reduce the influence of outlier values. The scaled dataset was partitioned into a 90% training set and a 10% test set, balancing the
+                        need for model training and validation accuracy.
+                    </p>
+
+                    <h3 class="h6 fw-bold">2.4 Model Selection and Tuning:</h3>
+                    <p>
+                        The LightGBM model was selected for its advantages in handling large datasets with high efficiency. A pipeline incorporating robust scaling, standard scaling and minmax normalizer was employed, ensuring that scaling
+                        was fit on the training data and applied consistently to the test data. The model's hyperparameters were fine-tuned using GridSearchCV, optimizing for minimal RMSE.
+                    </p>
+                </div>
+            </div>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">3. Results</h2>
+
+                    <h3 class="h6 fw-bold">3.1 Model Performance:</h3>
+                    <p>
+                        Post hyperparameter optimization, the LightGBM model achieved RMSE scores of 40.9°C and 39.5°C on two different test runs, indicating consistent predictive capabilities. Our linear regression baseline started at
+                        45°C. The model's performance was further visualized in a scatter plot of actual versus predicted melting points, with deviations from the y=x line analyzed to understand prediction discrepancies.
+                    </p>
+
+                    <h3 class="h6 fw-bold">3.2 Error Analysis:</h3>
+                    <p>The errors were further examined by creating bins based on actual melting points and calculating statistics within these bins, revealing patterns in the model's performance across different temperature ranges.</p>
+                </div>
+            </div>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">4. Discussion</h2>
+                    <p>
+                        The LightGBM model exhibited promising predictive performance, but there was evidence of heteroscedasticity in the residuals, indicating potential improvements in model structure or feature engineering. The error
+                        analysis revealed specific temperature ranges with higher predictive errors, guiding future research towards targeted model improvement in these areas.
+                    </p>
+                </div>
+            </div>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h2 class="h4 fw-bold">5. Conclusion</h2>
+                    <p>
+                        The study demonstrates the potential of machine learning in predicting molecular melting points, with LightGBM providing a solid framework for development. While the current model performs adequately, further
+                        research into feature enhancement and model refinement is recommended to address areas of high predictive uncertainty. Our approach sets the stage for more sophisticated predictive tools in computational chemistry,
+                        aiding in the rapid assessment of molecular properties.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

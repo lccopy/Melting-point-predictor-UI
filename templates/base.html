@@ -35,18 +35,31 @@
     </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='logo.png') }}"  style="width:40px; height:auto;" alt="Logo">Melting Point Estimator</a>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}" style="width:40px; height:auto;" alt="Logo">Melting Point Estimator
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('method') }}">Method</a>
+                </li>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- place for other navigation items if needed -->
-            </div>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contribute') }}">Contribute</a>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contacts') }}">Contacts</a>
+              </li>
+            </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <main class="container mt-5 flex-grow-1">
         {% block content %}
