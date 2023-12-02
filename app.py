@@ -3,17 +3,30 @@ import requests
 
 app = Flask(__name__)
 
+api_endpoint_status = "local" #local or online
+app_status = "local" #local or online
 
 def celsius_to_kelvin(celsius):
-    return celsius + 273.15
+    return round((celsius + 273.15), 2)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
 
         smiles = request.form.get('smiles')
-        #api call and preprocessing
-        melting_point = 42  # dummie value
+        if api_endpoint_status == "local":
+            api_url = "http://localhost:8000/predict"
+            response = requests.get(api_url, params={'SMILES': smiles})
+            melting_point = response.json()
+            melting_point = melting_point.get('melting_point', 'unknown')
+
+
+        if api_endpoint_status == "online":
+            api_url = ""
+            response = requests.get(api_url, params={'SMILES': smiles})
+            melting_point = response.json()
+            melting_point = melting_point.get('melting_point', 'unknown')
+
         k_melting_point = celsius_to_kelvin(melting_point)
 
         return render_template('result.html', smiles=smiles, melting_point=melting_point, k_melting_point=k_melting_point)
@@ -33,5 +46,10 @@ def contacts():
 def contribute():
     return render_template("contribute.html")
 
+
+
 if __name__ == '__main__':
-    app.run(debug=False)
+    if app_status == 'local':
+        app.run(debug=False, port=5002)
+    if app_status == 'online':
+        app.run(debug=False)
