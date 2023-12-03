@@ -4,7 +4,7 @@
         <div class="col-lg-10">
             <div class="text-center mb-5">
                 <h1 class="fw-bold">Comprehensive Machine Learning Approach for Predicting Molecular Melting Points</h1>
-                <p class="lead text-muted">An exploration of utilizing structural data for melting point prediction.</p>
+                <p class="lead text-muted">A study of utilizing structural data for melting point prediction.</p>
             </div>
 
             <div class="card shadow-sm mb-4">
@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h2 class="h4 fw-bold">1. Introduction</h2>
                     <p>
-                        The melting point of a molecule is a fundamental physical property with implications for its chemical stability and application. Traditional experimental methods for determining melting points are often
+                        The melting point of a molecule is a fundamental physical property with implications to its chemical stability and application. Traditional experimental methods for determining melting points are often
                         time-consuming and costly. Machine learning models offer a fast, cost-effective alternative for predicting physical properties from molecular structures. This study aims to employ the LightGBM model, renowned for its
                         efficiency with large datasets and high-dimensional features, to estimate melting points of molecules from their chemical properties.
                     </p>
@@ -32,25 +32,43 @@
                 <div class="card-body">
                     <h2 class="h4 fw-bold">2. Methodology</h2>
 
-                    <h3 class="h6 fw-bold">2.1 Data Collection and Preprocessing:</h3>
+                    <h3 class="h6 fw-bold">2.1 Bibliography:</h3>
                     <p>
-                        A dataset of molecular structures and associated melting points was gathered. Each entry consisted of molecular descriptors, including but not limited to, weight, volume, and various calculated properties. Data
-                        preprocessing included shuffling, removing non-informative features, and assessing multicollinearity.
+                      Recent advances in machine learning and deep learning technologies have led to the development of new models for predicting the properties of molecules. One challenge, which is still of great importance today, is the prediction of the melting temperature of chemical compounds.
                     </p>
 
-                    <h3 class="h6 fw-bold">2.2 Exploratory Data Analysis (EDA):</h3>
+                    <p>
+                      Many teams have tried to overcome this challenge, and the papers below are just a few examples:
+                      <br>1. Melting temperature prediction via first principles and deep learning, Qi-Jun Hong, <i>Computational Materials Science</i>, <b>2022</b>, 214, (111684).
+                      <br>2. Building Machine Learning Small Molecule Melting Points and Solubility Models Using CCDC Melting Points Dataset
+                      Xiangwei Zhu, Valery R. Polyakov, Krishna Bajjuri, Huiyong Hu, Andreas Maderna, Clare A. Tovee, and Suzanna C. Ward,
+                      <i>Journal of Chemical Information and Modeling</i>, <b>2023</b>, 63 (10), 2948-2959
+                    </p>
+
+                    <p>
+                      In our case, the project was carried out independently, and we are not affiliated with any laboratory or organization.
+                    </p>
+
+                    <h3 class="h6 fw-bold">2.2 Data Collection and Preprocessing:</h3>
+                    <p>
+                      A dataset of molecular structures and associated melting points was gathered
+                      (<a href="http://dx.doi.org/10.6084/m9.figshare.1031637" target="_blank">Jean-Claude Bradley Melting Point Dataset</a>).
+                      Each entry consisted of molecular descriptors, including but not limited to, weight, volume, and various calculated properties. Data preprocessing included shuffling, removing non-informative features, and assessing multicollinearity.
+                    </p>
+
+                    <h3 class="h6 fw-bold">2.3 Exploratory Data Analysis (EDA):</h3>
                     <p>We utilized Pearson correlation coefficients to visualize relationships between features, excluding those with coefficients greater than 0.90 to prevent multicollinearity from skewing the model's results.</p>
 
-                    <h3 class="h6 fw-bold">2.3 Feature Scaling:</h3>
+                    <h3 class="h6 fw-bold">2.4 Feature Scaling:</h3>
                     <p>
                         Numerical features were scaled using an ensemble of scalers to normalize data and reduce the influence of outlier values. The scaled dataset was partitioned into a 90% training set and a 10% test set, balancing the
                         need for model training and validation accuracy.
                     </p>
 
-                    <h3 class="h6 fw-bold">2.4 Model Selection and Tuning:</h3>
+                    <h3 class="h6 fw-bold">2.5 Model Selection and Tuning:</h3>
                     <p>
                         The LightGBM model was selected for its advantages in handling large datasets with high efficiency. A pipeline incorporating robust scaling, standard scaling and minmax normalizer was employed, ensuring that scaling
-                        was fit on the training data and applied consistently to the test data. The model's hyperparameters were fine-tuned using GridSearchCV, optimizing for minimal RMSE.
+                        would fit on the training data and coulb be applied consistently to the test data. The model's hyperparameters were fine-tuned using GridSearchCV, optimizing for minimal RMSE.
                     </p>
                 </div>
             </div>
@@ -73,7 +91,7 @@
                 <div class="card-body">
                     <h2 class="h4 fw-bold">4. Discussion</h2>
                     <p>
-                        The LightGBM model exhibited promising predictive performance, but there was evidence of heteroscedasticity in the residuals, indicating potential improvements in model structure or feature engineering. The error
+                        The LightGBM model exhibited promising predictive performance, but there was evidence of heteroscedasticity in the residuals, indicating the need for potential improvements in model structure or feature engineering. The error
                         analysis revealed specific temperature ranges with higher predictive errors, guiding future research towards targeted model improvement in these areas.
                     </p>
                 </div>
