@@ -5,4 +5,5 @@ Flask User Interface for [Melting Point Predictor project](https://github.com/Gu
 
 
 
-<img width="700" alt="image" src="https://github.com/lccopy/Melting-point-predictor-UI/assets/111251905/0b4c51db-60d8-47e6-a70d-fed5a1968931">
+<img width="700" alt="image" src="https://github.com/lccopy/Melting-point-predictor-UI/assets/111251905/003a0dfd-6932-4f07-bae8-420ee3c262a1">
+
