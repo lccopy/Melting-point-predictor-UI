@@ -4,7 +4,7 @@
         <div class="col-lg-8">
             <div class="text-center mb-5">
                 <h1 class="fw-bold">Melting Point Estimation App</h1>
-                <p class="lead text-muted">Enter your SMILES structure and get the estimated melting point with accuracy.</p>
+                <p class="lead text-muted">Enter your SMILES structure and get the estimated melting point.</p>
             </div>
 
             <div class="card shadow-sm">
@@ -12,7 +12,7 @@
                     <form method="POST">
                         <div class="mb-3">
                             <label for="smiles" class="form-label">SMILES Structure:</label>
-                            <input type="text" class="form-control" id="smiles" name="smiles" placeholder="C1CCCCC1" required />
+                            <input type="text" class="form-control" id="smiles" name="smiles" placeholder="Example: ClCCCl" required />
                         </div>
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-lg">Estimate</button>
@@ -44,7 +44,7 @@
                     </h2>
                     <div id="importanceCollapse" class="accordion-collapse collapse" aria-labelledby="importanceHeading" data-bs-parent="#infoAccordion">
                         <div class="accordion-body">
-                            The melting point of a substance is crucial for identification and characterization of a compound. It is an essential physical property used in many fields of science and industry.
+                            The melting point of a substance is crucial for identification and characterization of a compound. It is an essential physical property used in many fields of science and specially the chemical industry.
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     </h2>
                     <div id="dataCollapse" class="accordion-collapse collapse" aria-labelledby="dataHeading" data-bs-parent="#infoAccordion">
                         <div class="accordion-body">
-                            The data used for training our prediction models is sourced from reputable chemical databases and scientific literature. It encompasses a wide range of organic and inorganic compounds.
+                            The data used for training our prediction model is sourced from reputable chemical databases and scientific literature. It encompasses a wide range of organic and inorganic compounds.
                         </div>
                     </div>
                 </div>
