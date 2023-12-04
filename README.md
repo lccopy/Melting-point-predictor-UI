@@ -10,9 +10,14 @@ Flask User Interface for [Melting Point Predictor project](https://github.com/Gu
 
 ## How to use it
 
+Using this estimator is relatively straightforward. First, log on to the site and enter the SMILES rating of any compound, then click on "Estimate". You can use an existing compound, but it's also possible to test the application with a compound that hasn't yet been synthesized or listed.
+
+Note that the melting point is an estimate, not an exact prediction.
+
+The authors would like to point out that this application has been created independently and should not be used for commercial purposes.
 
 ## Collaborators
 
-***Luca Morel
+Luca Morel
 
-Guillaume Bretel***
+Guillaume Bretel
