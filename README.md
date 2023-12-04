@@ -18,6 +18,6 @@ The authors would like to point out that this application has been created indep
 
 ## Collaborators
 
-Luca Morel
+Luca Morel (Data Scientist, AI developer)
 
-Guillaume Bretel
+PhD. Guillaume Bretel (Doctor of Chemistry, Data Scientist)
