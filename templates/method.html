@@ -53,19 +53,31 @@
                     <p>
                       A dataset of molecular structures and associated melting points was gathered
                       (<a href="http://dx.doi.org/10.6084/m9.figshare.1031637" target="_blank">Jean-Claude Bradley Melting Point Dataset</a>).
-                      Each entry consisted of molecular descriptors, including but not limited to, weight, volume, and various calculated properties. Data preprocessing included shuffling, removing non-informative features, and assessing multicollinearity.
                     </p>
 
                     <h3 class="h6 fw-bold">2.3 Exploratory Data Analysis (EDA):</h3>
                     <p>We utilized Pearson correlation coefficients to visualize relationships between features, excluding those with coefficients greater than 0.90 to prevent multicollinearity from skewing the model's results.</p>
 
-                    <h3 class="h6 fw-bold">2.4 Feature Scaling:</h3>
+                    <h3 class="h6 fw-bold">2.4 Feature Engineering:</h3>
+                    <p>
+                      Various stages of features engineering were carried out, mainly using the RDKit library where possible. As a result, the following columns were added to the initial dataframe:
+                      -> Type and number of bonds in each molecules (example: C-C or C=0)
+                      -> Functional groups
+                      -> Molecular weight
+                      -> Number of different elements
+                      -> Number of aromatic rings
+                      -> Main chain lenght
+                      -> Number of double bonds
+                      -> XlogP
+                    </p>
+
+                    <h3 class="h6 fw-bold">2.5 Feature Scaling:</h3>
                     <p>
                         Numerical features were scaled using an ensemble of scalers to normalize data and reduce the influence of outlier values. The scaled dataset was partitioned into a 90% training set and a 10% test set, balancing the
                         need for model training and validation accuracy.
                     </p>
 
-                    <h3 class="h6 fw-bold">2.5 Model Selection and Tuning:</h3>
+                    <h3 class="h6 fw-bold">2.6 Model Selection and Tuning:</h3>
                     <p>
                         The LightGBM model was selected for its advantages in handling large datasets with high efficiency. A pipeline incorporating robust scaling, standard scaling and minmax normalizer was employed, ensuring that scaling
                         would fit on the training data and could be applied consistently to the test data. The model's hyperparameters were fine-tuned using GridSearchCV, optimizing for minimal RMSE.
